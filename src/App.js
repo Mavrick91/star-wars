@@ -1,9 +1,11 @@
-import React from 'react'
-import ApolloClient from 'apollo-boost'
-import { ThemeProvider } from 'styled-components'
+// @flow
+
 import { ApolloProvider } from '@apollo/react-hooks'
+import ApolloClient from 'apollo-boost'
 import Routes from 'app/routes'
 import GlobalStyle, { theme } from 'app/style'
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',

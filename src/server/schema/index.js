@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server'
-import { resolver as resolverPeoples, typeDefs as typePeoples } from './peoples'
 import { resolver as resolverFilms, typeDefs as typeFilms } from './films'
+import { resolver as resolverPeoples, typeDefs as typePeoples } from './peoples'
 import { resolver as resolverPlanets, typeDefs as typePlanets } from './planets'
 import { resolver as resolverSpecies, typeDefs as typeSpecies } from './species'
 import {

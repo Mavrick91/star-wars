@@ -1,5 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+// @flow
 import starjedi from 'app/resources/fonts/starjedi.ttf'
+import { createGlobalStyle } from 'styled-components'
 import colors from './colors'
 
 export const theme = {
@@ -7,6 +8,7 @@ export const theme = {
 }
 
 export default createGlobalStyle`
+
   *, *:before, *:after {
     box-sizing: border-box;
     font-family: Helvetica,serif;
@@ -15,7 +17,12 @@ export default createGlobalStyle`
   html, body, #root {
     height: 100%;
     margin: 0;
-    overflow-x: hidden;
+    min-width: 1200px;
+    overflow: hidden;
+  }
+  
+  #root {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)
   }
 
   @font-face {

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { ApolloServer } from 'apollo-server'
-import { typeDefs, resolvers } from './schema'
+import { resolvers, typeDefs } from './schema'
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
