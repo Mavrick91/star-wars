@@ -14,11 +14,6 @@ export function isJson(item: any): boolean {
   return typeof tmpItem === 'object' && tmpItem !== null
 }
 
-export function getParamUrl(validUrl: string, param: string): number {
-  const url = new URL(validUrl)
-  return parseInt(url.searchParams.get(param), 10)
-}
-
 export function getCategoryAndValue(url: string) {
   const splitUrl = url.split('/')
   const category = splitUrl[4]

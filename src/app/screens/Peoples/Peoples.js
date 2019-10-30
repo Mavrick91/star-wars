@@ -1,17 +1,16 @@
 // @flow
+import CustomReactPaginate from 'app/components/CustomReactPaginate'
 import CustomLoader from 'app/components/Loader/index'
 import MainButton from 'app/components/MainButton'
-import arrowLeft from 'app/resources/svg/arrow left.svg'
-import arrowRight from 'app/resources/svg/arrow right.svg'
+import arrowLeft from 'app/resources/svg/arrow left black.svg'
+import arrowRight from 'app/resources/svg/arrow right black.svg'
 import { getCategoryAndValue } from 'app/utils'
 import { get } from 'lodash'
 import * as React from 'react'
 import type { RouterHistory } from 'react-router-dom'
 import type { PeoplesType } from '.'
-
 import {
   Character,
-  ContainerButton,
   Image,
   Name,
   Wrapper,
@@ -63,45 +62,36 @@ function Peoples({ data, loading, loadPreviousOrNext, history }: Props) {
   }, [getContentToDisplay, peopleResult])
 
   function displayContent() {
-    if (loading
-
-        ) return <CustomLoader />
+    if (loading) return <CustomLoader />
 
     return <WrapperCharacter>{listCharacter}</WrapperCharacter>
   }
 
-  function handleClickPreviousNext(url) {
+  function handleClickPreviousNext({ selected }) {
     setListCharacter(null)
-    loadPreviousOrNext(url)
+    loadPreviousOrNext(selected + 1)
+  }
+
+  function getArrowNode(icon) {
+    return (
+      <MainButton size="md">
+        <img src={icon} alt="" />
+      </MainButton>
+    )
   }
 
   return (
     <Wrapper>
-      <ContainerButton>
-        {data && data.peoples.previous && (
-          <MainButton
-            size="md"
-            centerHorizontally
-            noAnim
-            onClick={() => handleClickPreviousNext(data.peoples.previous)}
-          >
-            <img src={arrowLeft} alt="arrow left" />
-          </MainButton>
-        )}
-      </ContainerButton>
       {displayContent()}
-      <ContainerButton>
-        {data && data.peoples.next && (
-          <MainButton
-            size="md"
-            centerHorizontally
-            noAnim
-            onClick={() => handleClickPreviousNext(data.peoples.next)}
-          >
-            <img src={arrowRight} alt="arrow right" />
-          </MainButton>
-        )}
-      </ContainerButton>
+      <CustomReactPaginate
+        pageCount={9}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={2}
+        onPageChange={handleClickPreviousNext}
+        pageClassName="page"
+        previousLabel={getArrowNode(arrowLeft)}
+        nextLabel={getArrowNode(arrowRight)}
+      />
     </Wrapper>
   )
 }
