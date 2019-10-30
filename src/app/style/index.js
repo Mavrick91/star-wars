@@ -18,7 +18,7 @@ export default createGlobalStyle`
     height: 100%;
     margin: 0;
     min-width: 1200px;
-    overflow: hidden;
+    overflow-y: hidden;
   }
   
   #root {

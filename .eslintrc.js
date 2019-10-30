@@ -25,6 +25,8 @@ module.exports = {
 
     'no-unused-expressions': 0,
     semi: 0,
+    'array-callback-return': 0,
+    'import/prefer-default-export': 0,
     'consistent-return': 0, //no need when update state
     'import/no-cycle': 0, //import type from parent
     'no-use-before-define': 0,
