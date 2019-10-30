@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
   height: 100%;
-  justify-content: center;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `
 
 export const WrapperCharacter = styled.div`
@@ -17,6 +16,7 @@ export const WrapperCharacter = styled.div`
   min-width: 1000px;
   justify-content: center;
   z-index: 10;
+  margin: 0 auto;
 
   & > div > img:hover {
     transform: scale(1.2);

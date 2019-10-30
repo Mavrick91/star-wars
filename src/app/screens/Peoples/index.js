@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import React from 'react'
 import type { ContextRouter } from 'react-router-dom'
-import { getParamUrl } from 'app/utils'
 import Peoples from './Peoples'
 
 export type PeoplesType = {
@@ -42,9 +41,7 @@ function ContainerPeoples({ history }: ContextRouter) {
     notifyOnNetworkStatusChange: true,
   })
 
-  function loadPreviousOrNext(validUrl) {
-    const page: number = getParamUrl(validUrl, 'page')
-
+  function loadPreviousOrNext(page: number) {
     fetchMore({
       variables: { page },
       updateQuery: (prev, { fetchMoreResult }: OptionsUpdateType) => {
