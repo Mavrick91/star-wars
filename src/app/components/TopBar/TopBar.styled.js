@@ -21,18 +21,9 @@ export const StyledLink = styled(Link)`
     padding: 20px 40px;
     text-align: center;
     color: ${isactive ? colors.yellow : colors.white};
-  `}
-`
 
-export const Slider = styled.div`
-  ${({ theme: { colors } }) => css`
-    height: 3px;
-    border-radius: 3px;
-    background-color: ${colors.yellow};
-    position: absolute;
-    z-index: 1200;
-    bottom: 0;
-    left: 0;
-    transition: left 0.4s linear, width 0.4s linear;
+    &:hover {
+      cursor: pointer;
+    }
   `}
 `

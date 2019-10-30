@@ -3,8 +3,8 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  height: 100%;
   justify-content: center;
-  height: calc(100% - 73px);
   position: relative;
 `
 
@@ -14,6 +14,7 @@ export const WrapperCharacter = styled.div`
   align-items: center;
   flex-wrap: wrap;
   max-width: 1350px;
+  min-width: 1000px;
   justify-content: center;
   z-index: 10;
 

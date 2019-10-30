@@ -1,21 +1,21 @@
 // @flow
-import * as React from 'react'
-import { get } from 'lodash'
+import CustomLoader from 'app/components/Loader/index'
 import MainButton from 'app/components/MainButton'
 import arrowLeft from 'app/resources/svg/arrow left.svg'
 import arrowRight from 'app/resources/svg/arrow right.svg'
-import CustomLoader from 'app/components/Loader/index'
+import { getCategoryAndValue } from 'app/utils'
+import { get } from 'lodash'
+import * as React from 'react'
 import type { RouterHistory } from 'react-router-dom'
 import type { PeoplesType } from '.'
 
 import {
+  Character,
+  ContainerButton,
+  Image,
+  Name,
   Wrapper,
   WrapperCharacter,
-  ContainerButton,
-  Name,
-  Character,
-  Image,
-  BackgroundImage,
 } from './Peoples.styled'
 
 type Props = {
@@ -27,43 +27,47 @@ type Props = {
 
 function Peoples({ data, loading, loadPreviousOrNext, history }: Props) {
   const [listCharacter, setListCharacter] = React.useState(null)
-  const [characterHovered, setCharacterHovered] = React.useState(null)
+  const peopleResult = get(data, 'peoples.results', [])
 
-  React.useEffect(() => {
-    if (data) getContentToDisplay()
-  }, [get(data, 'peoples.results')])
+  const getContentToDisplay = React.useCallback(() => {
+    const map: Array<Promise<any>> = peopleResult.map(({ url }) => {
+      const { category, value } = getCategoryAndValue(url)
 
-  function getContentToDisplay() {
-    if (!data) return null
+      return import(`app/resources/images/${category}/${value}.png`).then(
+        res => {
+          const idCharacter: RegExp$matchResult | null = url.match(/\d+/)
 
-    const map: Array<Promise<any>> = data.peoples.results.map(({ name }) => {
-      return import(`app/resources/images/peoples/${name}.png`).then(res => {
-        return (
-          <Character key={name}>
-            <Image
-              src={res.default}
-              alt={`${name} character`}
-              onClick={() => history.push(`/peoples/${name}`)}
-              onMouseEnter={() => setCharacterHovered(res.default)}
-              onMouseLeave={() => setCharacterHovered(null)}
-            />
-            <Name>{name}</Name>
-          </Character>
-        )
-      })
+          return (
+            <Character key={value}>
+              <Image
+                src={res.default}
+                alt={`${value} character`}
+                onClick={() =>
+                  history.push(`/peoples/${idCharacter ? idCharacter[0] : 1}`)
+                }
+              />
+              <Name>{value}</Name>
+            </Character>
+          )
+        },
+      )
     })
 
     Promise.all(map).then((newList: Array<React.Node>) => {
       setListCharacter(newList)
     })
-  }
+  }, [history, peopleResult])
+
+  React.useEffect(() => {
+    if (peopleResult.length !== 0) getContentToDisplay()
+  }, [getContentToDisplay, peopleResult])
 
   function displayContent() {
-    return (
-      <WrapperCharacter>
-        {loading ? <CustomLoader type="Triangle" /> : listCharacter}
-      </WrapperCharacter>
-    )
+    if (loading
+
+        ) return <CustomLoader />
+
+    return <WrapperCharacter>{listCharacter}</WrapperCharacter>
   }
 
   function handleClickPreviousNext(url) {
@@ -74,7 +78,7 @@ function Peoples({ data, loading, loadPreviousOrNext, history }: Props) {
   return (
     <Wrapper>
       <ContainerButton>
-        {data && (
+        {data && data.peoples.previous && (
           <MainButton
             size="md"
             centerHorizontally
@@ -87,7 +91,7 @@ function Peoples({ data, loading, loadPreviousOrNext, history }: Props) {
       </ContainerButton>
       {displayContent()}
       <ContainerButton>
-        {data && (
+        {data && data.peoples.next && (
           <MainButton
             size="md"
             centerHorizontally
@@ -98,9 +102,6 @@ function Peoples({ data, loading, loadPreviousOrNext, history }: Props) {
           </MainButton>
         )}
       </ContainerButton>
-      <BackgroundImage>
-        <img src={characterHovered} alt="" />
-      </BackgroundImage>
     </Wrapper>
   )
 }

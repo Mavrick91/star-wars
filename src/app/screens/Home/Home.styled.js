@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     color: ${colors.yellow};
     position: relative;
     overflow-x: hidden;
-    height: calc(100% - 73px);
+    height: 100%;
 
     #board {
       font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;

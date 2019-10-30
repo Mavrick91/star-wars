@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "flow": "flow",
+    "lint": "eslint src"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",

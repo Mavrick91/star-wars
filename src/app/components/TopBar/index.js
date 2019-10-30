@@ -1,14 +1,15 @@
 // @flow
+import Slider from 'app/components/Slider'
 import React from 'react'
-import { withRouter } from 'react-router'
 import type { ContextRouter } from 'react-router'
-import { Wrapper, Slider, StyledLink } from './TopBar.styled'
+import { withRouter } from 'react-router'
+import { StyledLink, Wrapper } from './TopBar.styled'
 
 type Props = $Shape<ContextRouter>
 
 function TopBar({ location: { pathname } }: Props) {
   const liRef = React.useRef(null)
-  const [slider, setSlider] = React.useState({})
+  const [slider, setSlider] = React.useState({ left: 0, width: 0 })
   const sections = [
     'peoples',
     'films',

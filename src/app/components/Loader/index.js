@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Loader from 'react-loader-spinner'
+import { Wrapper } from './Loader.styled'
 
 type Props = $Shape<{
   +type?: string,
@@ -16,7 +17,11 @@ function CustomLoader({
   height = 150,
   width = 150,
 }: Props) {
-  return <Loader type={type} color={colors} height={height} width={width} />
+  return (
+    <Wrapper>
+      <Loader type={type} color={colors} height={height} width={width} />
+    </Wrapper>
+  )
 }
 
 export default CustomLoader

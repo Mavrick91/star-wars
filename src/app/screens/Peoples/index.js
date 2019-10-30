@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
 import React from 'react'
 import type { ContextRouter } from 'react-router-dom'
+import { getParamUrl } from 'app/utils'
 import Peoples from './Peoples'
 
 export type PeoplesType = {
@@ -11,6 +12,7 @@ export type PeoplesType = {
     next: string,
     results: Array<{
       name: string,
+      url: string,
     }>,
   },
 }
@@ -28,6 +30,7 @@ const PEOPLES_QUERY = gql`
       next
       previous
       results {
+        url
         name
       }
     }
@@ -40,8 +43,8 @@ function ContainerPeoples({ history }: ContextRouter) {
   })
 
   function loadPreviousOrNext(validUrl) {
-    const url = new URL(validUrl)
-    const page: number = parseInt(url.searchParams.get('page'), 10)
+    const page: number = getParamUrl(validUrl, 'page')
+
     fetchMore({
       variables: { page },
       updateQuery: (prev, { fetchMoreResult }: OptionsUpdateType) => {
@@ -56,7 +59,7 @@ function ContainerPeoples({ history }: ContextRouter) {
           },
         }
       },
-    })
+    }).then()
   }
 
   if (error) {
