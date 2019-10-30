@@ -63,7 +63,9 @@ function Peoples({ data, loading, loadPreviousOrNext, history }: Props) {
   }, [getContentToDisplay, peopleResult])
 
   function displayContent() {
-    if (loading) return <CustomLoader />
+    if (loading
+
+        ) return <CustomLoader />
 
     return <WrapperCharacter>{listCharacter}</WrapperCharacter>
   }

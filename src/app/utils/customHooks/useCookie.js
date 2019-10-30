@@ -1,7 +1,7 @@
 // @flow
 
 import { useState } from 'react'
-import { isJson } from '../index'
+import { isJson } from '..'
 
 type ValueType = boolean | string | number | {}
 type SetValueType = (value: ValueType, options?: {}) => void
