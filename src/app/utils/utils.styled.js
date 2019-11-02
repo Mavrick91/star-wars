@@ -22,6 +22,7 @@ export const Name = styled.div`
   margin-top: 50px;
   font-size: 20px;
   color: white;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
