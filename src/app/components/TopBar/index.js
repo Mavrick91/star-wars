@@ -11,7 +11,7 @@ function TopBar({ location: { pathname } }: Props) {
   const liRef = React.useRef(null)
   const [slider, setSlider] = React.useState({ left: 0, width: 0 })
   const sections = [
-    'peoples',
+    'people',
     'films',
     'species',
     'planets',

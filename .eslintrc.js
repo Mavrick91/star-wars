@@ -24,6 +24,7 @@ module.exports = {
     'react/prop-types': 0,
 
     'no-unused-expressions': 0,
+    'no-underscore-dangle': 0,
     semi: 0,
     'array-callback-return': 0,
     'import/prefer-default-export': 0,

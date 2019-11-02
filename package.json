@@ -5,11 +5,13 @@
   "dependencies": {
     "@apollo/react-hooks": "^3.1.2",
     "apollo-boost": "^0.4.4",
+    "apollo-cache-inmemory": "^1.6.3",
     "apollo-server": "^2.9.5",
     "axios": "^0.19.0",
     "dotenv": "^8.1.0",
     "graphql": "^14.5.8",
     "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-loader-spinner": "^3.1.4",
@@ -25,7 +27,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "flow": "flow",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "server": "babel-node  -r node_modules/dotenv/config src/server/index.js",
+    "build-schema": "node src/schemaQuery.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
