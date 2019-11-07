@@ -34,17 +34,12 @@ function Home() {
           <p id="subtitle">THE CODERS MENACE</p>
           <br />
           <p>
-            Turmoil has engulfed the Galactic Republic as Christopher Kade
-            finishes studying to become a master in his trade.
+            Turmoil has engulfed the Galactic Republic as Christopher Kade finishes
+            studying to become a master in his trade.
           </p>
         </div>
       </div>
-      <MainButton
-        size="lg"
-        onClick={() => setCookie(!value)}
-        bottom={50}
-        right={50}
-      >
+      <MainButton size="lg" onClick={() => setCookie(!value)} bottom={50} right={50}>
         <img src={value === true ? volumeOff : volumeUp} alt="icon volume" />
       </MainButton>
     </Wrapper>

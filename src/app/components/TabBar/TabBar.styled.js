@@ -39,10 +39,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  width: 23.9%;
+  width: 22%;
   justify-content: flex-start;
 
-  & + & {
+  &:nth-child(2n + 2),
+  &:nth-child(3n + 3) {
     margin-left: 10px;
   }
 

@@ -12,20 +12,14 @@ import { Wrapper, WrapperSection } from './Section.styled'
 type Props = {
   isLoading: boolean,
   isNewCategory: boolean,
-  data: SectionType,
+  data: ?SectionType,
   loadPreviousOrNext: Function,
   history: RouterHistory,
 }
 
-function Section({
-  data,
-  isLoading,
-  loadPreviousOrNext,
-  history,
-  isNewCategory,
-}: Props) {
+function Section({ data, isLoading, loadPreviousOrNext, history, isNewCategory }: Props) {
   const [listItems, setListItems] = React.useState(null)
-  const sectionResult = data.section.results || []
+  const sectionResult = ((data || {}).section || {}).results || []
 
   const getContentToDisplay = React.useCallback(() => {
     const map: Array<Promise<any>> = sectionResult.map(({ url }) => {
@@ -56,11 +50,7 @@ function Section({
 
   return (
     <Wrapper>
-      {isLoading ? (
-        <CustomLoader />
-      ) : (
-        <WrapperSection>{listItems}</WrapperSection>
-      )}
+      {isLoading ? <CustomLoader /> : <WrapperSection>{listItems}</WrapperSection>}
       {!isNewCategory && data && data.section.count > 10 && (
         <CustomReactPaginate
           pageCount={Math.ceil(data.section.count / 10)}

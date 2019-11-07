@@ -3,12 +3,16 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
   position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   z-index: 100;
   background: linear-gradient(#1b2735 5%, #0d1117 95%);
   height: 73px;
+`
+
+export const Container = styled.div`
+  width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
 `
 
 export const StyledLink = styled(Link)`

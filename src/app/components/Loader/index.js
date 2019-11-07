@@ -5,10 +5,10 @@ import Loader from 'react-loader-spinner'
 import { Wrapper } from './Loader.styled'
 
 type Props = $Shape<{
-  +type?: string,
-  +colors?: string,
-  +height?: number,
-  +width?: number,
+  type?: string,
+  colors?: string,
+  height?: number,
+  width?: number,
 }>
 
 function CustomLoader({

@@ -28,14 +28,11 @@ function ContainerSection({ history, match }: Props) {
   const {
     params: { category },
   }: MatchType = match
-  const { loading, data, error, fetchMore, networkStatus } = useQuery(
-    SECTION_QUERY,
-    {
-      notifyOnNetworkStatusChange: true,
-      variables: { page: 1, category },
-      fetchPolicy: 'cache-and-network',
-    },
-  )
+  const { loading, data, error, fetchMore, networkStatus } = useQuery(SECTION_QUERY, {
+    notifyOnNetworkStatusChange: true,
+    variables: { page: 1, category },
+    fetchPolicy: 'cache-and-network',
+  })
 
   function loadPreviousOrNext(page: number) {
     fetchMore({
@@ -51,8 +48,6 @@ function ContainerSection({ history, match }: Props) {
   if (error) {
     return <div>Error</div>
   }
-
-  if (!data) return <div>Data not found</div>
 
   return (
     <Section

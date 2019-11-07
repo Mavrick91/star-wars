@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   justify-content: space-evenly;
 `
 
-export const Character = styled.div`
+export const WrapperImage = styled.div`
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ export const Character = styled.div`
   margin-right: 30px;
 
   img {
-    height: 620px;
+    height: 100%;
     width: 350px;
   }
 
@@ -31,18 +31,31 @@ export const WrapperDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 800px;
+  min-width: 800px;
+`
+
+export const ContainerDescription = styled.div`
+  display: flex;
+  margin-bottom: 30px;
+
+  & > div:nth-child(1) {
+    white-space: nowrap;
+  }
+
+  & > div:nth-child(2) {
+    margin-left: 20px;
+  }
 `
 
 export const Description = styled.div`
   color: white;
-  margin: 20px 0;
   font-size: 24px;
-
-  &:nth-child(1) {
-    text-transform: capitalize;
-  }
-  &:nth-child(2) {
-    text-transform: capitalize;
+  text-transform: capitalize;
+  
+  	& + & {
+  		  margin-top: 20px;
+  	}
   }
 `
 

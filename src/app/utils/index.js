@@ -23,7 +23,7 @@ export function getCategoryAndValue(url: string) {
   const indexCategory = splitUrl[5]
   const value = C[category][indexCategory]
 
-  return { category, value }
+  return { category, value, indexCategory }
 }
 
 export function getImageWithName(

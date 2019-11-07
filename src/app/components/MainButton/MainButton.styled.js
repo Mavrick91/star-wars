@@ -47,11 +47,7 @@ export default styled.div`
       ${top && `top: ${top}px`};
       width: ${tmpSize};
       height: ${tmpSize};
-      background: linear-gradient(
-        190deg,
-        ${colors.blueDark} 5%,
-        ${colors.blueDark1} 95%
-      );
+      background: linear-gradient(190deg, ${colors.blueDark} 5%, ${colors.blueDark1} 95%);
       border-radius: 50em;
       display: flex;
       justify-content: center;

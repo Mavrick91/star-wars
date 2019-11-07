@@ -79,9 +79,7 @@ describe('useCookie.spec', () => {
       act(() => {
         result.current.setCookie(newValue)
       })
-      expect(document.cookie).toContain(
-        `${defaultKey}=${JSON.stringify(newValue)}`,
-      )
+      expect(document.cookie).toContain(`${defaultKey}=${JSON.stringify(newValue)}`)
 
       act(() => {
         result.current.clearCookie()

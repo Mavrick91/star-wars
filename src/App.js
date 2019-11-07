@@ -2,11 +2,11 @@
 
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient, { InMemoryCache } from 'apollo-boost'
+import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
 import Routes from 'app/routes'
 import GlobalStyle, { theme } from 'app/style'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
-import { IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
 import introspectionQueryResultData from './fragmentTypes.json'
 
 const fragmentMatcher = new IntrospectionFragmentMatcher({
