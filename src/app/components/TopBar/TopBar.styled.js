@@ -25,6 +25,7 @@ export const StyledLink = styled(Link)`
     padding: 20px 40px;
     text-align: center;
     color: ${isactive ? colors.yellow : colors.white};
+    font-family: starjedi;
 
     &:hover {
       cursor: pointer;

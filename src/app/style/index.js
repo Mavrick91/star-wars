@@ -1,5 +1,4 @@
 // @flow
-import starjedi from 'app/resources/fonts/starjedi.ttf'
 import { createGlobalStyle } from 'styled-components'
 import colors from './colors'
 
@@ -8,7 +7,6 @@ export const theme = {
 }
 
 export default createGlobalStyle`
-
   *, *:before, *:after {
     box-sizing: border-box;
     font-family: Helvetica,serif;
@@ -23,9 +21,4 @@ export default createGlobalStyle`
   #root {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)
   }
-
-  @font-face {
-  font-family: 'starjedi';
-  src: url(${starjedi});
-}
 `

@@ -8,7 +8,7 @@ import {
   Description,
   Wrapper,
   WrapperDescription,
-  WrapperImage,
+  WrapperAvatar,
 } from './DetailedSection.styled'
 
 type Props = {
@@ -26,10 +26,10 @@ const DetailedSection = ({ url, contentTabBar, description }: Props) => {
 
   return (
     <Wrapper>
-      <WrapperImage>
+      <WrapperAvatar>
         <img src={avatar} alt="Avatar character" />
         <span>{nameAvatar}</span>
-      </WrapperImage>
+      </WrapperAvatar>
 
       <WrapperDescription>
         <ContainerDescription>

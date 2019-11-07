@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   justify-content: space-evenly;
 `
 
-export const WrapperImage = styled.div`
+export const WrapperAvatar = styled.div`
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -19,11 +19,12 @@ export const WrapperImage = styled.div`
   }
 
   span {
-    text-transform: uppercase;
     font-size: 50px;
     color: white;
     margin-top: 30px;
     text-align: center;
+    font-family: starjout;
+    text-transform: lowercase;
   }
 `
 
@@ -45,35 +46,20 @@ export const ContainerDescription = styled.div`
 
   & > div:nth-child(2) {
     margin-left: 20px;
+    div {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 `
 
 export const Description = styled.div`
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   text-transform: capitalize;
   
   	& + & {
   		  margin-top: 20px;
   	}
   }
-`
-
-export const Planet = styled.div`
-  align-self: flex-start;
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  img {
-    width: 100%;
-  }
-
-  span {
-    text-transform: uppercase;
-    font-size: 30px;
-    color: white;
-    margin-top: 20px;
-
 `

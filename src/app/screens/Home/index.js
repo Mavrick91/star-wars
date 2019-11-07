@@ -1,6 +1,7 @@
 // @flow
 
 import MainButton from 'app/components/MainButton'
+import { openingCrawl } from 'app/constantes'
 import logo from 'app/resources/images/logo.png'
 import starWarsIntro from 'app/resources/song/start wars intro.mp4'
 import volumeOff from 'app/resources/svg/volume off.svg'
@@ -29,15 +30,7 @@ function Home() {
         <img src={logo} alt="logo star wars" />
       </Logo>
       <div id="board">
-        <div id="content">
-          <p id="title">Episode I</p>
-          <p id="subtitle">THE CODERS MENACE</p>
-          <br />
-          <p>
-            Turmoil has engulfed the Galactic Republic as Christopher Kade finishes
-            studying to become a master in his trade.
-          </p>
-        </div>
+        <div id="content">{openingCrawl()}</div>
       </div>
       <MainButton size="lg" onClick={() => setCookie(!value)} bottom={50} right={50}>
         <img src={value === true ? volumeOff : volumeUp} alt="icon volume" />

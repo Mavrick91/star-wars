@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'starjedi';
+  src: url(./app/resources/fonts/starjedi.ttf);
+}
+
+@font-face {
+  font-family: 'starjout';
+  src: url(./app/resources/fonts/starjout.ttf);
+}

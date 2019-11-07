@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const films = {
   1: 'A New Hope',
   2: 'The Empire Strikes Back',
@@ -282,4 +284,23 @@ export const people = {
   86: 'Poe Dameron',
   87: 'BB8',
   88: 'Captain Phasma',
+}
+
+export const openingCrawl = () => {
+  return (
+    <>
+      <p id="title">Episode I</p>
+      <p id="subtitle">The Force Awakens</p>
+      <br />
+      <p>
+        According to all know laws of aviation, there is no way a bee should be able to
+        fly. It's wings are too small to get it's fat little body off the ground.
+      </p>
+      <p>
+        The bee, of course, flies anyway because bee don't care what humans think is
+        impossible
+      </p>
+      <p>Sent from my iPhone</p>
+    </>
+  )
 }
