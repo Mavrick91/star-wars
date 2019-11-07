@@ -294,13 +294,43 @@ export const openingCrawl = () => {
       <br />
       <p>
         According to all know laws of aviation, there is no way a bee should be able to
-        fly. It's wings are too small to get it's fat little body off the ground.
+        fly. It&apos;s wings are too small to get it&apos;s fat little body off the
+        ground.
       </p>
       <p>
-        The bee, of course, flies anyway because bee don't care what humans think is
+        The bee, of course, flies anyway because bee don&apos;t care what humans think is
         impossible
       </p>
       <p>Sent from my iPhone</p>
     </>
   )
 }
+
+export const alphabet = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+]

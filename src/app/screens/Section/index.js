@@ -1,5 +1,6 @@
 // @flow
 import { useQuery } from '@apollo/react-hooks'
+import * as C from 'app/constantes'
 import { SECTION_QUERY } from 'app/graphql/section.graphql'
 import React from 'react'
 import type { RouterHistory } from 'react-router-dom'
@@ -33,6 +34,7 @@ function ContainerSection({ history, match }: Props) {
     variables: { page: 1, category },
     fetchPolicy: 'cache-and-network',
   })
+  const allSectionsItems = C[category]
 
   function loadPreviousOrNext(page: number) {
     fetchMore({
@@ -56,6 +58,7 @@ function ContainerSection({ history, match }: Props) {
       data={data}
       loadPreviousOrNext={loadPreviousOrNext}
       history={history}
+      allSectionsItems={allSectionsItems}
     />
   )
 }

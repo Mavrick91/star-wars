@@ -2,6 +2,7 @@
 import CustomReactPaginate from 'app/components/CustomReactPaginate'
 import CustomLoader from 'app/components/Loader/index'
 import MainButton from 'app/components/MainButton'
+import SearchInput from 'app/components/SearchInput'
 import arrowLeft from 'app/resources/svg/arrow left black.svg'
 import arrowRight from 'app/resources/svg/arrow right black.svg'
 import { getCategoryAndValue, getImageWithName } from 'app/utils'
@@ -15,9 +16,17 @@ type Props = {
   data: ?SectionType,
   loadPreviousOrNext: Function,
   history: RouterHistory,
+  allSectionsItems: {},
 }
 
-function Section({ data, isLoading, loadPreviousOrNext, history, isNewCategory }: Props) {
+function Section({
+  data,
+  allSectionsItems,
+  isLoading,
+  loadPreviousOrNext,
+  history,
+  isNewCategory,
+}: Props) {
   const [listItems, setListItems] = React.useState(null)
   const sectionResult = ((data || {}).section || {}).results || []
 
@@ -50,6 +59,9 @@ function Section({ data, isLoading, loadPreviousOrNext, history, isNewCategory }
 
   return (
     <Wrapper>
+      {!isNewCategory && data && data.section.count > 10 && (
+        <SearchInput data={allSectionsItems} />
+      )}
       {isLoading ? <CustomLoader /> : <WrapperSection>{listItems}</WrapperSection>}
       {!isNewCategory && data && data.section.count > 10 && (
         <CustomReactPaginate
