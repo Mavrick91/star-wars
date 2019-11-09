@@ -6,13 +6,14 @@ export const Wrapper = styled.div`
   z-index: 100;
   background: linear-gradient(#1b2735 5%, #0d1117 95%);
   height: 73px;
+  width: 100%;
 `
 
 export const Container = styled.div`
-  width: 1200px;
   display: flex;
   margin: 0 auto;
   height: 100%;
+  width: 1200px;
 `
 
 export const StyledLink = styled(Link)`

@@ -38,7 +38,7 @@ const ContainerDetailedSection = ({ match }: ContextRouter) => {
         Array.isArray(value) ||
         key === '__typename' ||
         key === 'url' ||
-        value === 'n/a' ||
+        value === 'N/A' ||
         value === 'unknown'
       )
         return acc
