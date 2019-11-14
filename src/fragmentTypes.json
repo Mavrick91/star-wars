@@ -1,1 +1,0 @@
-{"__schema":{"types":[{"kind":"UNION","name":"DetailedSection","possibleTypes":[{"name":"People"},{"name":"Film"}]}]}}

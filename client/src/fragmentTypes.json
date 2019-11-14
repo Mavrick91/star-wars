@@ -1,0 +1,1 @@
+{"__schema":{"types":[{"kind":"UNION","name":"DetailedSection","possibleTypes":[{"name":"People"},{"name":"Film"},{"name":"Planet"},{"name":"Specie"},{"name":"Starship"},{"name":"Vehicle"}]}]}}
