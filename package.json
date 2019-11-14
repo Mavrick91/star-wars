@@ -11,6 +11,9 @@
     "start": "concurrently \"cd client && npm run start\" \"cd server && npm run start\"",
     "start:prod": "cd server && npm run start:prod"
   },
+  "engines": {
+    "node": "10.x.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mavrick91/star-wars.git"
