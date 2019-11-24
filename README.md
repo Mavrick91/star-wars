@@ -3,8 +3,6 @@ In the root directory, you can run:
 
 `npm install`
 
-`npm build-schema`
-
 `npm start`
 
 ## What
