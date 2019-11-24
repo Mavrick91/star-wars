@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "npx babel src --minified --out-dir build --ignore node_moodules,build",
-    "start": "babel-node -r dotenv/config src/index.js",
+    "start": "babel-node -r node_modules/dotenv/config src/index.js",
     "start:prod": "node -r dotenv/config build/index.js"
   },
   "repository": {
